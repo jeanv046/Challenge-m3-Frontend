@@ -4,9 +4,6 @@ const Filtros = (props) => {
   return (
     <>
       <div>
-        <div>
-          <p className="text-title">Blusas</p>
-        </div>
         <div className="container-filtro">
           <p className="text-filtro">Cores</p>
           {props.colores.map((element, index) => {

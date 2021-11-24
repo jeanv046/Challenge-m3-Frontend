@@ -9,6 +9,15 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+p, h1, h2, h3, h4, h5, h6{
+  margin: 0;
+
+}
+
+*, ::after, ::before {
+  box-sizing: border-box;
+}
+
 #root {
   width: 100%;
 }
@@ -20,11 +29,20 @@ body {
 }
 .container {
   width: 100%;
+  padding: 0 1rem;
+  margin: 0 auto;
+}
+
+.nav {
+  display: flex;
   height: 64px;
   border-bottom: 1px solid #ccc;
-  display: flex;
+}
+
+.content-icons {
+ display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
 }
 
 .rectangule1 {
@@ -55,6 +73,8 @@ body {
 
 .text-title{
   font-size: 32px;
+  margin-top: 40px;
+  margin-bottom: 65px;
 }
 
 .text-filtro{
@@ -89,7 +109,77 @@ body {
   margin: auto;
 }
 
+.container-select{
+  width: 142px;
+  position: relative;
+}
+
+.select-order{
+  width: 100%;
+  padding: 10px 25px 10px 10px;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  -moz-appearance:none; /* Firefox */
+  -webkit-appearance:none; /* Safari and Chrome */
+  appearance:none;
+}
+
+.d-flex{
+  display: flex;
+  
+}
+.w-full{
+  width: 100%;
+}
+
+.j-between{
+  justify-content: space-between;
+}
+
+.a-center{
+  align-items: center;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+
+.icon-arrow {
+  width: 12px;
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  transform: translate(-25px, -50%)
+}
+
+@media (min-width: 576px) {
+  .container {
+      max-width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+      max-width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+      max-width: 960px;
+  }
+}
+
+
+@media (min-width: 1200px) {
+  .container{
+      max-width: 1140px;
+  }
+}
+
+@media (min-width: 1400px){
+  .container {
+      max-width: 1320px;
+  }
 }

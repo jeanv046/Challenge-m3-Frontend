@@ -5,15 +5,21 @@ import carrito from "../assets/img/carrito.png";
 const Header = () => {
   return (
     <>
-      <header className="container">
-        <div className="container-image">
-          <div className="izq-logo">
-            <img src={logo} width="100" alt="" />
+      <header>
+          <div className="nav">
+
+            <div className="container content-icons">
+
+                <div className="izq-logo">
+                    <img src={logo} width="100" alt="" />
+                </div>
+                <div className="der-carrito">
+                    <img src={carrito} alt="" />
+                </div>
+
+            </div>
+
           </div>
-          <div className="der-carrito">
-            <img src={carrito} alt="" />
-          </div>
-        </div>
       </header>
     </>
   );
