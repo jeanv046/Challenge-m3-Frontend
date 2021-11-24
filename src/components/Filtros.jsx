@@ -3,8 +3,7 @@ import React from "react";
 const Filtros = (props) => {
   return (
     <>
-      <div>
-        <div className="container-filtro">
+        <div className="container-filtro d-none d-sm-block">
           <p className="text-filtro">Cores</p>
           {props.colores.map((element, index) => {
             return (
@@ -66,7 +65,6 @@ const Filtros = (props) => {
           {/* <input className="input-check" type="checkbox" name="my-checkbox" id="opt-in" />
                     <label for="opt-in">Check me!</label> */}
         </div>
-      </div>
     </>
   );
 };

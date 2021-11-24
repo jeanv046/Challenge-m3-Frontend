@@ -9,11 +9,13 @@ const Products = () => {
   const [resultado, setResultado] = useState({});
   const [colores] = useState([]);
   const [tamano] = useState([]);
+  const [cards, setCartas] = useState([]);
+  const host = process.env.REACT_APP_URL_HOST
   /* const [precio] = useState([]); */
 
   useEffect(() => {
     const consultarApi = async () => {
-      const url = "http://localhost:5000/products";
+      const url = host + "/products";
       await axios
         .get(url)
         .then((respuesta) => {
@@ -24,9 +26,14 @@ const Products = () => {
               tamano.indexOf(element) === -1 && tamano.push(element);
             });
             tamano.sort((a, b) => a - b);
+            
             /* precio.indexOf(element.price) === -1 && precio.push(element.price); */
           });
           setResultado(respuesta.data);
+          setCartas(respuesta.data)
+          console.log(resultado)
+          console.log(cards)
+          
         })
         .catch((err) => {
           console.log(err);
@@ -45,7 +52,7 @@ const Products = () => {
 
         <div className="d-flex">
           <Filtros colores={colores} /* precio={precio} */ tamano={tamano} />
-          <Cards />
+          <Cards cards={cards} />
         </div>
       </div>
     </>

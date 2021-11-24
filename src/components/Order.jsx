@@ -1,6 +1,15 @@
 import React from 'react'
 import arrow from '../assets/img/chevron-down-solid.svg'
 
+/* Esto es para ordenar de mas reciente a mas antiguo */
+/* http://localhost:5000/products?_sort=date&_order=desc  */
+
+/* Esto es para ordena de mayor precio a menor precio */
+/* http://localhost:5000/products?_sort=price&_order=desc */
+
+/* Esto es para ordena de menor precio a mayor precio */
+/* http://localhost:5000/products?_sort=price&_order=asc */
+
 const Order = () => {
     return ( 
         <div className="container-select">
