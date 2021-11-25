@@ -15,10 +15,50 @@ const Products = () => {
     "_sort=price&_order=asc",
     "_sort=price&_order=desc",
   ];
+  const [filterColor, setFilterColor] = useState([]);
+  const [filterTalla, setFilterTalla] = useState([]);
+  const ranges = [
+    { option: 1, min: 0, max: 50 },
+    { option: 2, min: 51, max: 150 },
+    { option: 3, min: 151, max: 300 },
+    { option: 4, min: 301, max: 500 },
+    { option: 5, min: 500 },
+  ];
+  const [filterRangePrice, setFilterRangePrice] = useState([]);
+  const search_options = [`?_page=${page}&_limit=9`];
   const host = process.env.REACT_APP_URL_HOST;
 
-  let url = host + `/products?_page=${page}&_limit=9`;
+  let url = host + `/products`;
   /* const [precio] = useState([]); */
+  function onChangeFilterColor(e) {
+    if (e.target.checked) {
+      setFilterColor([...filterColor, e.target.value]);
+    } else {
+      setFilterColor(filterColor.filter((value) => value !== e.target.value));
+    }
+  }
+  function onChangeFilterTalla(e) {
+    if (e.target.checked) {
+      setFilterTalla([...filterTalla, e.target.value]);
+    } else {
+      setFilterTalla(filterTalla.filter((value) => value !== e.target.value));
+    }
+  }
+  function onChangeFilterRangePrice(e) {
+    if (e.target.checked) {
+      setFilterRangePrice([
+        ...filterRangePrice,
+        ranges.filter((range) => range.option === Number(e.target.value))[0],
+      ]);
+      /* ranges.filter((range) => range.option === Number(e.target.value) ); */
+    } else {
+      setFilterRangePrice(
+        filterRangePrice.filter((range) => range.option !== Number(e.target.value))
+      );
+      /* console.log(ranges.filter((range) => range.option === Number(e.target.value))) */
+    }
+
+  }
 
   async function consumir_api(url, update = true) {
     await axios
@@ -37,7 +77,7 @@ const Products = () => {
           (update && setCartas(cards.concat(respuesta.data))) ||
             setCartas(respuesta.data);
 
-          console.log(cards);
+          /* console.log(cards); */
         } else {
           setVisible(false);
           setPages(page);
@@ -52,15 +92,16 @@ const Products = () => {
     let position = event.target.value;
     /* url += '&' + optionOrdering[position]
     set */
-    let url = host + "/products?" + optionOrdering[position];
-    consumir_api(url, false);
+    let newurl = url + search_options[0] + optionOrdering[position];
+    consumir_api(newurl, false);
     console.log(event.target.value);
   }
 
   useEffect(() => {
     setPages(page);
-    console.log("Entro");
-    consumir_api(url);
+    /* console.log("Entro"); */
+    consumir_api(url + search_options[0]);
+    // eslint-disable-next-line
   }, [url]);
 
   return (
@@ -72,16 +113,28 @@ const Products = () => {
             <Order handle={handleOrdering} />
           </div>
         </div>
-        
-          <div className="d-flex d-sm-none j-center">
-              <button className="btn-responsive left">Filtrar</button>
-              <button className="btn-responsive rigth">Ordenar</button>
-          </div>
+
+        <div className="d-flex d-sm-none j-center">
+          <button className="btn-responsive left">Filtrar</button>
+          <button className="btn-responsive rigth">Ordenar</button>
+        </div>
 
         <div className="contend-tween">
           <div className="d-flex contend-duo">
-            <Filtros colores={colores} tamano={tamano} />
-            <Cards cards={cards} />
+            <Filtros
+              onChangeFilterColor={onChangeFilterColor}
+              onChangeFilterTalla={onChangeFilterTalla}
+              onChangeFilterRangePrice={onChangeFilterRangePrice}
+              colores={colores}
+              tamano={tamano}
+              ranges={ranges}
+            />
+            <Cards
+              cards={cards}
+              filterColor={filterColor}
+              filterTalla={filterTalla}
+              filterRangePrice={filterRangePrice}
+            />
           </div>
           <div className="d-flex j-center contend-tween">
             {visible && (

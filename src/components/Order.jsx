@@ -13,8 +13,8 @@ import arrow from '../assets/img/chevron-down-solid.svg'
 const Order = (props) => {
     return ( 
         <div className="container-select">
-            <select onChange={ props.handle } className="select-order" name="" id="" >
-                <option selected >Ordernar por:</option>
+            <select defaultValue={-1} onChange={ props.handle } className="select-order" name="" id="" >
+                <option valule="-1" >Ordernar por:</option>
                 <option value="0">Mas recentes</option>
                 <option value="1">Menor preço</option>
                 <option value="2">Maior preço</option>
