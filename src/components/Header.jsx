@@ -4,6 +4,9 @@ import logo from "../assets/img/logo-m3.png";
 import carrito from "../assets/img/carrito.png";
 
 const Header = () => {
+  function refresh() {
+    window.location.reload(false);
+  }
   return (
     <>
       <header>
@@ -12,7 +15,7 @@ const Header = () => {
             <div className="container content-icons">
 
                 <div className="izq-logo">
-                    <Link to='/'><img src={logo} width="100" alt="" /></Link>
+                    <img className="img-refresh" onClick={refresh} src={logo} width="100" alt="" />
                 </div>
                 <div className="der-carrito">
                     <img src={carrito} alt="" />

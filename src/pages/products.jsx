@@ -67,9 +67,16 @@ const Products = () => {
     <>
       <div className="container">
         <div className="d-flex w-full j-between a-center">
-          <p className="text-title">Blusas</p>
-          <Order handle={handleOrdering} />
+          <p className="text-title w-full">Blusas</p>
+          <div className="d-none d-sm-block">
+            <Order handle={handleOrdering} />
+          </div>
         </div>
+        
+          <div className="d-flex d-sm-none j-center">
+              <button className="btn-responsive left">Filtrar</button>
+              <button className="btn-responsive rigth">Ordenar</button>
+          </div>
 
         <div className="contend-tween">
           <div className="d-flex contend-duo">

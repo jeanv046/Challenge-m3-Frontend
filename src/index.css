@@ -58,6 +58,9 @@ p, h1, h2, h3, h4, h5, h6{
   height: 0;
 }
 
+.img-refresh{
+  cursor: pointer;
+}
 
 .content-checks{
   display: flex;
@@ -132,8 +135,9 @@ p, h1, h2, h3, h4, h5, h6{
 
 .text-title{
   font-size: 32px;
-  margin-top: 40px;
-  margin-bottom: 65px;
+  margin-top: 24px;
+  margin-bottom: 12px;
+  text-align: center;
 }
 
 .text-filtro{
@@ -215,6 +219,10 @@ code {
   display: none !important;
 }
 
+.d-block {
+  display: block !important;
+}
+
 .card-body{
   display: flex;
   flex-direction: column;
@@ -260,6 +268,24 @@ code {
   background-color: #00C0EE;
   color: #fff;
   border: none;
+}
+
+.btn-responsive{
+  font-size: 24px;
+  color:  #666666;
+  background: transparent;
+  margin: 0;
+  margin-bottom: 35px;
+  border: 1px solid #666666;
+  width: 100%;
+  max-width: 171px;
+  height: 49px;
+}
+.btn-responsive.left{
+  border-right: 0;
+}
+.btn-responsive.rigth{
+
 }
 
 .contend-tween{
@@ -323,6 +349,11 @@ code {
 }
 
 @media (min-width: 576px) {
+  .text-title{
+    text-align: left;
+    margin-top: 40px;
+    margin-bottom:65px;
+  }
   .content-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(195px, 1fr));
@@ -339,6 +370,9 @@ code {
   }
   .d-sm-block {
     display: block !important;
+  }
+  .d-sm-none {
+    display: none !important;
   }
 /*   .card {
     width: 100%;
