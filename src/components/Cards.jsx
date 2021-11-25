@@ -10,20 +10,16 @@ const Cards = (props) => {
       <div className="content-grid">
         {props.cards.map((element, index) => {
           return (
-            <div className="card">
+            <div className="card" key={index}>
               <div
                 className="img-card"
                 style={{ backgroundImage: "url(" + host + element.image + ")" }}
               ></div>
               <div className="card-body">
-                <h5 className="card-title">{element.name}</h5>
-                <p className="card-text">
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </p>
-                <a href="#" className="btn btn-primary">
-                  Go somewhere
-                </a>
+                <h5 className="card-title text-upper">{element.name}</h5>
+                <p className="card-text">R$ {element.price}</p>
+                <p className="card-text-down">até {element.parcelamento[0]}x de R${element.parcelamento[1]}</p>
+                <button className="boton-card">COMPRAR</button>
               </div>
             </div>
           );

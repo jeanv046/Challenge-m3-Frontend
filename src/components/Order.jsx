@@ -10,10 +10,10 @@ import arrow from '../assets/img/chevron-down-solid.svg'
 /* Esto es para ordena de menor precio a mayor precio */
 /* http://localhost:5000/products?_sort=price&_order=asc */
 
-const Order = () => {
+const Order = (props) => {
     return ( 
         <div className="container-select">
-            <select className="select-order" name="" id="" >
+            <select onChange={ props.handle } className="select-order" name="" id="" >
                 <option selected >Ordernar por:</option>
                 <option value="0">Mas recentes</option>
                 <option value="1">Menor preço</option>

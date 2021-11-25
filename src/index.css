@@ -1,8 +1,14 @@
+@font-face {
+  font-family: 'open-sans';
+  src:url('./assets/fonts/OpenSans-VariableFont_wdth\,wght.ttf');
+  font-weight: bold;
+  font-style: normal;
+}
 body {
   display: flex;
   justify-content: center;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+  font-family: 'open sans', -apple-system, BlinkMacSystemFont,  "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -131,6 +137,10 @@ p, h1, h2, h3, h4, h5, h6{
   width: 100%;
 }
 
+.j-center{
+  justify-content: center;
+}
+
 .j-between{
   justify-content: space-between;
 }
@@ -169,12 +179,77 @@ code {
   display: none !important;
 }
 
+.card-body{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card-title{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.card-text {
+  font-weight: bold ;
+  line-height: 22px;
+}
+.card-text-down{
+  color: #666666;
+  margin-bottom: 14px;
+}
+.text-upper{
+  text-transform: uppercase;
+}
 .img-card{
-/*   background-image: url("assets/img/img_2.png"); */
+  background-size: auto;
   background-position: center;
   background-repeat: no-repeat;
   width: 100%;
-  height: 293px;
+  height: 243px;
+}
+.boton-card{
+  width: 100%;
+  max-width: 195px;
+  height: 33px;
+  background-color: #000000;
+  color: #fff;
+  border: none;
+  font-weight: bold;
+}
+
+.btn-mas{
+  width: 100%;
+  max-width: 175px;
+  height: 35px; 
+  background-color: #00C0EE;
+  color: #fff;
+  border: none;
+}
+
+.contend-tween{
+  padding-bottom: 40px  ;
+}
+.contend-duo{
+  padding-bottom: 73px;
+
+}
+.container-footer{
+  display: flex;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  margin-top: 15px;
+  background-color: #000000;  
+  height: 40px
+}
+.into-footer{
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+.footer-text{
+
+  color: #ffff;
 }
 
 /* .card {
@@ -190,12 +265,24 @@ code {
     width: 100%;
   }
 }
+@media (min-width: 361px) and (max-width: 521px) {
+  .img-card{
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 243px;
+  }
+}
 @media (min-width: 521px) {
   .content-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
     grid-gap: 18px 25px;
     width: 100%;
+  }
+  .img-card{
+    height: 293px;
   }
 }
 

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 import logo from "../assets/img/logo-m3.png";
 import carrito from "../assets/img/carrito.png";
 
@@ -11,7 +12,7 @@ const Header = () => {
             <div className="container content-icons">
 
                 <div className="izq-logo">
-                    <img src={logo} width="100" alt="" />
+                    <Link to='/'><img src={logo} width="100" alt="" /></Link>
                 </div>
                 <div className="der-carrito">
                     <img src={carrito} alt="" />
