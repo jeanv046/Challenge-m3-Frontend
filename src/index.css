@@ -51,30 +51,83 @@ p, h1, h2, h3, h4, h5, h6{
   justify-content: space-between;
 }
 
-.rectangule1 {
+
+.input-core {
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+
+
+.content-checks{
+  display: flex;
+  align-items: center;
+}
+
+.input-core ~ .content-checks > .checks {
   display: flex;
   width: 16px;
   height: 16px;
   left: 162px;
   top: 249px;
-
   border: 1px solid rgba(0, 0, 0, 0.5);
   box-sizing: border-box;
 }
 
-.rectangule2{
-  
+.input-core:checked ~ .content-checks> .checks > .icon-checks {
   margin: auto;
   width: 10px;
   height: 10px;
   left: 165px;
   top: 252px;
-
   background: #00c0ee;
 }
-.checks{
+
+.input-tamanhos {
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+
+.container-talla{
   display: flex;
-  align-items: center;
+  flex-wrap: wrap;
+  padding-bottom: 24px;
+  width: 170px;
+  column-gap: 8px;
+  row-gap: 8px;
+}
+
+.input-tamanhos ~ .check-talla {
+  display: flex;
+  width: 32px;
+  height: 32px;
+  left: 162px;
+  top: 465px;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  box-sizing: border-box;
+}
+
+.input-tamanhos ~ .check-talla > .text-talla {
+  font-size: 16px;
+  margin: auto;
+}
+
+
+.input-tamanhos:checked ~ .check-talla {
+  display: flex;
+  width: 32px;
+  height: 32px;
+  left: 162px;
+  top: 465px;
+  border: 1px solid #00c0ee;
+  box-sizing: border-box;
+}
+
+.input-tamanhos:checked ~ .check-talla > .text-talla {
+  font-size: 16px;
+  font-weight: bold;
+  margin: auto;
 }
 
 .text-title{
@@ -84,6 +137,7 @@ p, h1, h2, h3, h4, h5, h6{
 }
 
 .text-filtro{
+  padding-bottom: 15px;
   font-size: 16px;
 }
 
@@ -93,26 +147,8 @@ p, h1, h2, h3, h4, h5, h6{
   color:#000000;
 }
 
-.container-talla{
-  display: flex;
-  flex-wrap: wrap;
-  width: 170px;
-  column-gap: 8px;
-  row-gap: 8px;
-}
-
-.check-talla{
-  display: flex;
-  width: 32px;
-  height: 32px;
-  left: 162px;
-  top: 465px;
-  border: 1px solid rgba(0, 0, 0, 0.5);
-  box-sizing: border-box;
-}
-.text-talla{
-  font-size: 16px;
-  margin: auto;
+.margin-core {
+  margin-bottom: 24px;
 }
 
 .container-select{
